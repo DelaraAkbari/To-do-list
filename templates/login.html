@@ -1,0 +1,56 @@
+{%extends 'base.html'%}
+
+{%block title%}
+  login
+{%endblock title%}
+
+{%block style%}
+        body{
+            font-size: 30px;
+            text-align: center;
+            background-color: LightGoldenRodYellow;
+            color: Tomato;
+        }
+
+        .btn{
+            color: tomato;
+            font-size: 30px;
+            background-color: seagreen;
+            text-decoration: none;
+            box-shadow:2px 2px 3px;
+        }
+
+        .btn:hover{
+            transform:translateY(5px);
+        }
+
+        form{
+            text-align: center;
+            font-size:30px ;
+            padding:4%;
+        }
+
+        .input{
+            border: seagreen solid 2px;
+            background-color: LightGoldenRodYellow;
+            color: tomato;
+            text-align: center;
+            width: 250px;
+            height: 50px;
+        }
+
+{%endblock style%}
+
+{%block content%}
+
+<form method="POST">
+  <label for="username">username:</label>
+<input class="input"  type="text" name="username" required>
+  <br><br>
+  <label for="password">password:</label>
+<input class="input" type="password" name="password"  required>
+<br><br>
+<input  class="btn" type="submit" value="login">
+</form>
+
+{%endblock content%}

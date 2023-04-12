@@ -1,0 +1,75 @@
+{%extends 'base.html'%}
+
+{%block title%}
+show detail
+{%endblock title%}
+
+{%block style%}
+        body{
+            font-size: 30px;
+            text-align: center;
+            background-color: LightGoldenRodYellow;
+            color: Tomato;
+        }
+
+        table{
+
+            margin: auto;
+            width: 60%;
+        }
+
+        th{
+            border: solid seagreen 3px;
+        }
+
+        td{
+            border: solid seagreen 3px;
+        }
+
+        .a{
+            color: tomato;
+            background-color: seagreen;
+            text-decoration: none;
+            border: tomato solid 3px;
+            border-radius: 25px;
+            padding: 10px;
+        }
+
+        .a:hover{
+            color:LightGoldenRodYellow;
+        }
+
+        .btn{
+            color: tomato;
+            background-color: seagreen;
+            text-decoration: none;
+            padding: 4px;
+            font-size: 20px;
+            box-shadow:2px 2px 3px;
+        }
+
+{%endblock style%}
+
+{%block content%}
+<br>
+<table class="table" style="color: tomato;">
+<tr>
+      <th>topic </th>
+      <th>date </th>
+      <th>time </th>
+      <th>details</th>
+      <th>delete</th>
+      <th>edit</th>
+</tr>
+
+<tr>
+    <td>{{do.topic}}</td>
+    <td>{{do.date}}</td>
+    <td>{{do.time}}</td>
+    <td>{{do.description}}</td>
+    <td><a type="button"  class="btn" href={{url_for("delete",do_id=do.id)}}>done</a></td>
+    <td><a type="button"  class="btn" href={{url_for("edit",do_id=do.id)}}>edit </a></td>
+</tr>
+</table>
+{%endblock content%}
+

@@ -1,0 +1,78 @@
+{%extends 'base.html'%}
+
+{%block title%}
+   add list
+{%endblock title%}
+
+{%block style%}
+        body{
+            background-color: LightGoldenRodYellow;
+            color: Tomato;
+        }
+
+        form{
+          text-align: center;
+            font-size:30px ;
+            /*border: seagreen dashed 3px;*/
+            padding:5%;
+            border-radius: 30px;
+        }
+
+        .submit{
+            background-color: seagreen;
+            font-size: 30px;
+            color: tomato;
+            border: tomato solid 3px;
+            border-radius: 30px;
+        }
+
+        .input{
+            border: seagreen solid 2px;
+            background-color: LightGoldenRodYellow;
+            color: tomato;
+            text-align: center;
+            width: 250px;
+            height: 50px;
+        }
+
+        textarea{
+            border: seagreen solid 2px;
+            background-color: LightGoldenRodYellow;
+            color: tomato;
+            text-align: center;
+            width: 250px;
+            height: 50px;
+        }
+
+        ::placeholder{
+            color: tomato;
+        }
+
+        .btn{
+            color: tomato;
+            font-size: 30px;
+            background-color: seagreen;
+            text-decoration: none;
+            box-shadow:2px 2px 3px;
+        }
+
+        .btn:hover{
+            transform:translateY(5px);
+        }
+
+{%endblock style%}
+
+{%block content%}
+<form class="form" method="POST" >
+    <label for="topic">your topic:</label>
+    <input class="input" type="text" name="topic" value={{do.topic}}><br><br>
+    <label for="date"> date:</label>
+    <input  class="input" type="date" name="date" value={{do.date}} ><br><br>
+    <label for="time">time:</label>
+    <input class="input" type="time" name="time" value={{do.time}} ><br><br>
+    <label for="description">your description:</label>
+    <textarea  type="text" name="description" >{{do.description}}</textarea>
+    <br>  <br>
+    <input class="btn" type="submit" value="edit">
+ </form>
+{%endblock content%}

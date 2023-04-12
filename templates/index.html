@@ -1,0 +1,73 @@
+{%extends 'base.html'%}
+
+{%block title%}
+  to do list
+{%endblock title%}
+
+{%block style%}
+
+        body{
+            font-size: 30px;
+            text-align: center;
+            background-color: LightGoldenRodYellow;
+            color: Tomato;
+        }
+
+        th{
+            border: solid seagreen 3px;
+        }
+        td{
+            border: solid seagreen 3px;
+        }
+        .a{
+            color: tomato;
+            background-color: seagreen;
+            text-decoration: none;
+            border: tomato solid 3px;
+            border-radius: 25px;
+            padding: 10px;
+        }
+
+        .a:hover{
+           color:LightGoldenRodYellow;
+        }
+
+        .btn{
+           color: tomato;
+           background-color: seagreen;
+           text-decoration: none;
+            padding: 2px;
+            font-size: 20px;
+            box-shadow:2px 2px 3px;
+         }
+
+{%endblock style%}
+
+{%block content%}
+<br>
+<h1>to do list</h1>
+<table class="table" style="color: tomato;">
+<thead style="background-color: seagreen;color: tomato;">
+<tr>
+      <th>topic </th>
+      <th>date </th>
+      <th>time </th>
+      <th>details</th>
+      <th>delete</th>
+</tr>
+</thead>
+
+{%for do in does%}
+{%if do.user==user%}
+<tr>
+    <td>{{do.topic}}</td>
+    <td>{{do.date}}</td>
+    <td>{{do.time}}</td>
+    <td><a class="btn" href={{url_for("show_details",do_id=do.id)}}>show </a></td>
+    <td><a class="btn" href={{url_for("delete",do_id=do.id)}}>done</a></td>
+</tr>
+{%endif%}
+{%endfor%}
+</table>
+{%endblock content%}
+
