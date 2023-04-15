@@ -79,7 +79,7 @@ def add():
 @app.route('/show_details/<int:do_id>',methods=['GET','POST'])
 def show_details(do_id):
     do = Do.query.get(do_id)
-    return render_template("show.html",do=do)
+    return render_template("show.html",do=do,user=request.cookies.get('user'))
 
 @app.route('/delete/<int:do_id>',methods=['GET','POST'])
 def delete(do_id):
